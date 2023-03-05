@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .App-logo {
@@ -32,7 +34,32 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputForm{
+  text-align: left;
+}
+
+.input{
+  width: 100%;
+  border-color: #84B5EF;
+  border-radius: 8px;
+}
+
+.numberSize{
+  width: 40px;
+}
+
+.label{
+  font-weight: bold;
+  font-size: 20px;
 }
