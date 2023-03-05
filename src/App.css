@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -40,26 +39,128 @@
   }
 }
 
+/* kyushik css */
+
+/* app  */
 .navBar {
+  display: flex;
+  text-align: center;
+}
+
+/* form  */
+
+.formTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputForm {
+  text-align: left;
+}
+
+.questionBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.questionBoxText {
+  width: 100%;
+  padding-left: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  width: 100%;
+  border: 2.5px solid #84B5EF;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.textareaInput {
+  width: 100%;
+  border-radius: 8px;
+  border: 2.5px solid #84B5EF;
+  resize: none;
+  font-family: helvetica;
+  font-size: 18px;
+}
+
+.numberSize {
+  width: 40px;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.textWithOptional {
   display: flex;
   justify-content: space-between;
 }
 
-.inputForm{
-  text-align: left;
+.optional {
+  color: lightslategrey;
+  font-style: italic;
 }
 
-.input{
-  width: 100%;
-  border-color: #84B5EF;
+.subTitle {
+  display: flex;
+  text-align: center;
+}
+
+/* landingPage  */
+
+.landingPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* writing styles*/
+
+.writingStylesDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.styleContainer {
+  display: flex;
+  align-items: flex-start;
   border-radius: 8px;
+  border: 2.5px solid #84B5EF;
+  width: 50%;
+
 }
 
-.numberSize{
-  width: 40px;
+.styleContainerText {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.label{
-  font-weight: bold;
-  font-size: 20px;
+.radioButton {
+  /* display: none; */
+}
+
+.submitWrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.submitButton {
+  width: 50%;
+  height: 50px;
+  border: 2.5px solid #84B5EF;
+  border-radius: 8px;
+  background: #84B5EF;
+  color: white;
+  font-style: bold;
 }

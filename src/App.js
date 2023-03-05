@@ -7,10 +7,6 @@ import LandingPage from './LandingPage';
 function App() {
   return (
     <div className="App">
-      <nav className="navBar">
-        <Link to="/">Home</Link>
-        <Link to="/form">Form</Link>
-      </nav>
 
       <Switch>
         <Route exact path="/">
