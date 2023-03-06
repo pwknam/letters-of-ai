@@ -28,22 +28,24 @@ import write from './images/write.svg'
 
 function Form() {
 
-
     const [prompt, setPrompt] = useState("");
     const [response, setResponse] = useState("");
     const [name, setName] = useState()
     const [relationship, setRelationship] = useState()
     const [company, setCompany] = useState()
-    useEffect(() => {
-        console.log('Response:', response);
-      }, [response]);
+    const [description, setDescription] = useState()
+    const [accomplishments, setAccomplishments] = useState()
+    const [skills, setSkills] = useState()
+    const [style, setStyle] = useState()
+    const [words, setWords] = useState(300)
+
     
   
     const handleSubmit = (e) => {
       e.preventDefault();
 
     setPrompt(prevPrompt => {
-        const updatedPrompt = `write me a letter of recommendation with 20 words for a candidate named ${name} who is applying for a job at ${company} who I have the following relationship with: ${relationship}`;
+        const updatedPrompt = `write me a letter of recommendation with a ${style} style in ${words} words for a candidate named ${name} with these accomplishments: ${accomplishments} and these skills: ${skills} who is applying for with this job description ${description} who I have the following relationship with: ${relationship}`;
         console.log(updatedPrompt); // this will log the updated prompt value
         return updatedPrompt;
       });
@@ -53,6 +55,7 @@ function Form() {
     };
 
     useEffect(()=> {
+        if (prompt !== ""){
         axios
         .post("http://localhost:8080/chat", { prompt })
         .then((res) => {
@@ -72,7 +75,8 @@ function Form() {
         .catch((err) => {
           console.error(err);
         });
-      }, [prompt])
+    }  
+    }, [prompt])
 
     const [isLoading, setIsLoading] = useState(true)
     const [hasCalledAPI, setHasCalledAPI] = useState(true)
@@ -119,7 +123,7 @@ function Form() {
                     <img src={paste} className="numberSize" />
                     <div className="questionBoxText">
                         <label className="label">Please paste the job description.</label>
-                        <textarea className="textareaInput" rows="10" placeholder="e.g. Google is looking for two software engineers who can dominate the world. "></textarea>
+                        <textarea onChange={e => setDescription(e.target.value)}name = "description"  className="textareaInput" rows="10" placeholder="e.g. Google is looking for two software engineers who can dominate the world. "></textarea>
                     </div>
                 </div>
 
@@ -131,7 +135,7 @@ function Form() {
                     <img src={write} className="numberSize" />
                     <div className="questionBoxText">
                         <label className="label">Please describe any accomplishments of the individual.</label>
-                        <textarea className="textareaInput" rows="10" placeholder="e.g. I created Google Maps and I graduated Summa Cum Laude at Harvard"></textarea>
+                        <textarea onChange={e => setAccomplishments(e.target.value)}name = "accomplishments"  className="textareaInput" rows="10" placeholder="e.g. I created Google Maps and I graduated Summa Cum Laude at Harvard"></textarea>
                     </div>
                 </div>
 
@@ -145,7 +149,7 @@ function Form() {
                             <label className="label">What are relevant skills or personal qualities the individual possesses?</label>
                             <label className="optional">Optional</label>
                         </div>
-                        <textarea className="textareaInput" rows="10" placeholder="e.g. I am fluent in React.js and in Python. I also have a very curious mind."></textarea>
+                        <textarea onChange={e => setSkills(e.target.value)}name = "skills" className="textareaInput" rows="10" placeholder="e.g. I am fluent in React.js and in Python. I also have a very curious mind."></textarea>
                     </div>
                 </div>
 
@@ -156,7 +160,7 @@ function Form() {
 
                 <h1 style={{ textAlign: "center" }}>Options</h1>
 
-                <div className="writingStylesDiv">
+                <div className="writingStylesDiv" >
                     <img src={select} className="numberSize" />
                     <label className="label">Writing Styles</label>
 
@@ -164,8 +168,8 @@ function Form() {
                     <br />
 
 
-                    <div className="styleContainer">
-                        <input type="radio" id="formal" className="radioButton" name="writingStyle"></input>
+                    <div className="styleContainer" onChange={(e)=> setStyle(e.target.id)}>
+                        <input type="radio" id="formal" className="radioButton" name="writingStyle" ></input>
                         <label htmlFor="formal" className="styleContainerText">
                             <h3>Formal</h3>
                             <ul>
@@ -177,7 +181,7 @@ function Form() {
 
                     <br />
 
-                    <div className="styleContainer">
+                    <div className="styleContainer" onChange={(e)=> setStyle(e.target.id)}>
                         <input type="radio" id="narrative" className="radioButton" name="writingStyle"></input>
                         <label htmlFor="narrative" className="styleContainerText">
                             <h3>Narrative</h3>
@@ -190,7 +194,7 @@ function Form() {
 
                     <br />
 
-                    <div className="styleContainer">
+                    <div className="styleContainer" onChange={(e)=> setStyle(e.target.id)}>
                         <input type="radio" id="bulletPoint" className="radioButton" name="writingStyle"></input>
                         <label htmlFor="bulletPoint" className="styleContainerText">
                             <h3>Bullet Point</h3>
@@ -203,7 +207,7 @@ function Form() {
 
                     <br />
 
-                    <div className="styleContainer">
+                    <div className="styleContainer" onChange={(e)=> setStyle(e.target.id)}>
                         <input type="radio" id="comparative" className="radioButton" name="writingStyle"></input>
                         <label htmlFor="comparative" className="styleContainerText">
                             <h3>Comparative</h3>
@@ -216,7 +220,7 @@ function Form() {
 
                     <br />
 
-                    <div className="styleContainer">
+                    <div className="styleContainer" onChange={(e)=> setStyle(e.target.id)}>
                         <input type="radio" id="persuasive" className="radioButton" name="writingStyle"></input>
                         <label htmlFor="persuasive" className="styleContainerText">
                             <h3>Persuasive</h3>
@@ -235,7 +239,7 @@ function Form() {
                             <div className="textWithOptional">
                                 <label className="label">Maximum Word Count</label>
                             </div>
-                            <input className="textareaInput" rows="10" placeholder="e.g. 500 words."></input>
+                            <input onChange={(e)=> setWords(e.target.value)} className="textareaInput" rows="10" placeholder="e.g. 500 words."></input>
                         </div>
                     </div>
 
@@ -248,7 +252,6 @@ function Form() {
                     <input type="submit" className="submitButton"></input>
                 </div>
 
-            <p>{response}</p>
             </form >
 
             <br />
@@ -256,7 +259,7 @@ function Form() {
 
             {isLoading ? <Loading /> : null}
             
-            {hasCalledAPI ? <Output/> : null}
+            {hasCalledAPI ? <Output response={response}/> : null}
 
         </div >
     )
