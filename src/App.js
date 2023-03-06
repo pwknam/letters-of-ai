@@ -3,10 +3,17 @@ import './App.css';
 import { Switch, Route, Link } from 'react-router-dom';
 import Form from './Form';
 import LandingPage from './LandingPage';
+
+import axios from "axios";
+import React, {useState} from 'react'
+
 import PastLetters from './PastLetters';
 
 function App() {
+
+
   return (
+    <>
     <div className="App">
 <nav>
   <Link to="/">Home</Link>
@@ -33,7 +40,20 @@ function App() {
         
       </Switch>
     </div>
+        {/* <div>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={prompt}
+            onChange={(e) => setPrompt(e.target.value)}
+          />
+          <button type="submit">Submit</button>
+        </form>
+        <p>{response}</p>
+      </div> */}
+      </>
   );
 }
 
 export default App;
+

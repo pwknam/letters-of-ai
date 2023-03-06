@@ -4,8 +4,12 @@ import './App.css';
 
 //components
 import Question from "./Question";
+
+import axios from "axios";
+
 import Loading from "./Loading";
 import Output from "./Output";
+
 
 //images
 import number from './images/number.svg'
@@ -24,8 +28,41 @@ import write from './images/write.svg'
 
 function Form() {
 
+
+    const [prompt, setPrompt] = useState("");
+    const [response, setResponse] = useState("");
+    const [name, setName] = useState()
+    const [relationship, setRelationship] = useState()
+    const [company, setCompany] = useState()
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+
+    setPrompt(prevPrompt => {
+        const updatedPrompt = `write me a letter of recommendation with 300 words for a candidate named ${name} who is applying for a job at ${company} who I have the following relationship with: ${relationship}`;
+        console.log(updatedPrompt); // this will log the updated prompt value
+        return updatedPrompt;
+      });
+
+      console.log(prompt)
+      axios
+        .post("http://localhost:8080/chat", { prompt })
+        .then((res) => {
+            // res.json()
+            console.log(res)
+          // Update the response state with the server's response
+          setResponse(res.data);
+          console.log(response)
+        })
+        // .then(data => console.log(response))
+        .catch((err) => {
+          console.error(err);
+        });
+    };
+
     const [isLoading, setIsLoading] = useState(true)
     const [hasCalledAPI, setHasCalledAPI] = useState(true)
+
 
 
     return (
@@ -39,13 +76,13 @@ function Form() {
             <br />
             <br />
 
-            <form className="inputForm">
+            <form className="inputForm" onSubmit={handleSubmit}>
 
                 <div className="questionBox">
                     <img src={write} className="numberSize" />
                     <div className="questionBoxText">
                         <label className="label">Who are you writing this letter for?</label>
-                        <input type="text" className="input" placeholder="e.g. Michelle Choi and Kyushik Nam"></input>
+                        <input onChange={e => setName(e.target.value)} type="text" name="name" className="input" placeholder="e.g. Michelle Choi and Kyushik Nam"></input>
                     </div>
                 </div>
 
@@ -56,7 +93,7 @@ function Form() {
                     <img src={write} className="numberSize" />
                     <div className="questionBoxText">
                         <label className="label">What is your relationship with the applicant?</label>
-                        <input type="text" className="input" placeholder="e.g. I boss Kyushik around and tell him what to do."></input>
+                        <input onChange={e => setRelationship(e.target.value)}name = "relationship" type="text" className="input" placeholder="e.g. I boss Kyushik around and tell him what to do."></input>
                     </div>
                 </div>
 
@@ -64,6 +101,7 @@ function Form() {
                 <br />
 
                 <div className="questionBox">
+
                     <img src={paste} className="numberSize" />
                     <div className="questionBoxText">
                         <label className="label">Please paste the job description.</label>
@@ -190,12 +228,13 @@ function Form() {
                 </div>
                 <br />
                 <br />
+
                 <div className="submitWrapper">
 
                     <input type="submit" className="submitButton"></input>
                 </div>
 
-
+            <p>{response}</p>
             </form >
 
             <br />
