@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 
 //components
@@ -34,31 +34,45 @@ function Form() {
     const [name, setName] = useState()
     const [relationship, setRelationship] = useState()
     const [company, setCompany] = useState()
+    useEffect(() => {
+        console.log('Response:', response);
+      }, [response]);
+    
   
     const handleSubmit = (e) => {
       e.preventDefault();
 
     setPrompt(prevPrompt => {
-        const updatedPrompt = `write me a letter of recommendation with 300 words for a candidate named ${name} who is applying for a job at ${company} who I have the following relationship with: ${relationship}`;
+        const updatedPrompt = `write me a letter of recommendation with 20 words for a candidate named ${name} who is applying for a job at ${company} who I have the following relationship with: ${relationship}`;
         console.log(updatedPrompt); // this will log the updated prompt value
         return updatedPrompt;
       });
 
-      console.log(prompt)
-      axios
+      
+
+    };
+
+    useEffect(()=> {
+        axios
         .post("http://localhost:8080/chat", { prompt })
         .then((res) => {
             // res.json()
+            console.log('CHECK ME!', prompt)
             console.log(res)
           // Update the response state with the server's response
-          setResponse(res.data);
-          console.log(response)
+          
+          setResponse(prevRes => {
+            let newRes = res.data;
+            console.log("HERE", newRes)
+
+            return newRes;
+          });
         })
         // .then(data => console.log(response))
         .catch((err) => {
           console.error(err);
         });
-    };
+      }, [prompt])
 
     const [isLoading, setIsLoading] = useState(true)
     const [hasCalledAPI, setHasCalledAPI] = useState(true)
