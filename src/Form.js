@@ -28,11 +28,15 @@ import write from './images/write.svg'
 
 function Form() {
 
-    const [prompt, setPrompt] = useState("");
+
+
+    const [prompt, setPrompt] = useState();
+
     const [response, setResponse] = useState("");
     const [name, setName] = useState()
     const [relationship, setRelationship] = useState()
     const [company, setCompany] = useState()
+
     const [description, setDescription] = useState()
     const [accomplishments, setAccomplishments] = useState()
     const [skills, setSkills] = useState()
@@ -41,8 +45,16 @@ function Form() {
 
     
   
+
     const handleSubmit = (e) => {
-      e.preventDefault();
+        e.preventDefault();
+
+        setPrompt(prevPrompt => {
+            const updatedPrompt = `write me a letter of recommendation with 20 words for a candidate named ${name} who is applying for a job at ${company} who I have the following relationship with: ${relationship}`;
+            console.log(updatedPrompt); // this will log the updated prompt value
+            return updatedPrompt;
+        });
+
 
     setPrompt(prevPrompt => {
         const updatedPrompt = `write me a letter of recommendation with a ${style} style in ${words} words for a candidate named ${name} with these accomplishments: ${accomplishments} and these skills: ${skills} who is applying for with this job description ${description} who I have the following relationship with: ${relationship}`;
@@ -50,9 +62,10 @@ function Form() {
         return updatedPrompt;
       });
 
-      
+
 
     };
+
 
     useEffect(()=> {
         if (prompt !== ""){
@@ -76,6 +89,7 @@ function Form() {
           console.error(err);
         });
     }  
+
     }, [prompt])
 
     const [isLoading, setIsLoading] = useState(true)
@@ -111,7 +125,7 @@ function Form() {
                     <img src={write} className="numberSize" />
                     <div className="questionBoxText">
                         <label className="label">What is your relationship with the applicant?</label>
-                        <input onChange={e => setRelationship(e.target.value)}name = "relationship" type="text" className="input" placeholder="e.g. I boss Kyushik around and tell him what to do."></input>
+                        <input onChange={e => setRelationship(e.target.value)} name="relationship" type="text" className="input" placeholder="e.g. I boss Kyushik around and tell him what to do."></input>
                     </div>
                 </div>
 
@@ -232,18 +246,19 @@ function Form() {
                     </div>
 
                     <br />
-                    <br />
 
-                    <div className="questionBox">
+                    {/* <div className="questionBox">
                         <div className="questionBoxText">
                             <div className="textWithOptional">
                                 <label className="label">Maximum Word Count</label>
                             </div>
                             <input onChange={(e)=> setWords(e.target.value)} className="textareaInput" rows="10" placeholder="e.g. 500 words."></input>
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
+
+            
                 <br />
                 <br />
 
@@ -252,14 +267,17 @@ function Form() {
                     <input type="submit" className="submitButton"></input>
                 </div>
 
+
             </form >
 
             <br />
             <br />
 
             {isLoading ? <Loading /> : null}
+
             
             {hasCalledAPI ? <Output response={response}/> : null}
+
 
         </div >
     )
