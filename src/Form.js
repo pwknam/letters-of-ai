@@ -30,7 +30,7 @@ function Form() {
 
 
 
-    const [prompt, setPrompt] = useState();
+    const [prompt, setPrompt] = useState("");
 
     const [response, setResponse] = useState("");
     const [name, setName] = useState()
@@ -43,8 +43,8 @@ function Form() {
     const [style, setStyle] = useState()
     const [words, setWords] = useState(300)
 
-    
-  
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -56,43 +56,43 @@ function Form() {
         });
 
 
-    setPrompt(prevPrompt => {
-        const updatedPrompt = `write me a letter of recommendation with a ${style} style in ${words} words for a candidate named ${name} with these accomplishments: ${accomplishments} and these skills: ${skills} who is applying for with this job description ${description} who I have the following relationship with: ${relationship}`;
-        console.log(updatedPrompt); // this will log the updated prompt value
-        return updatedPrompt;
-      });
+        setPrompt(prevPrompt => {
+            const updatedPrompt = `write me a letter of recommendation with a ${style} style in ${words} words for a candidate named ${name} with these accomplishments: ${accomplishments} and these skills: ${skills} who is applying for with this job description ${description} who I have the following relationship with: ${relationship}`;
+            console.log(updatedPrompt); // this will log the updated prompt value
+            return updatedPrompt;
+        });
 
 
 
     };
 
 
-    useEffect(()=> {
-        if (prompt !== ""){
-        axios
-        .post("http://localhost:8080/chat", { prompt })
-        .then((res) => {
-            // res.json()
-            console.log('CHECK ME!', prompt)
-            console.log(res)
-          // Update the response state with the server's response
-          
-          setResponse(prevRes => {
-            let newRes = res.data;
-            console.log("HERE", newRes)
+    useEffect(() => {
+        if (prompt !== "") {
+            axios
+                .post("http://localhost:8080/chat", { prompt })
+                .then((res) => {
+                    // res.json()
+                    console.log('CHECK ME!', prompt)
+                    console.log(res)
+                    // Update the response state with the server's response
 
-            return newRes;
-          });
-        })
-        // .then(data => console.log(response))
-        .catch((err) => {
-          console.error(err);
-        });
-    }  
+                    setResponse(prevRes => {
+                        let newRes = res.data;
+                        console.log("HERE", newRes)
+
+                        return newRes;
+                    });
+                })
+                // .then(data => console.log(response))
+                .catch((err) => {
+                    console.error(err);
+                });
+        }
 
     }, [prompt])
 
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(false)
     const [hasCalledAPI, setHasCalledAPI] = useState(true)
 
 
@@ -137,7 +137,7 @@ function Form() {
                     <img src={paste} className="numberSize" />
                     <div className="questionBoxText">
                         <label className="label">Please paste the job description.</label>
-                        <textarea onChange={e => setDescription(e.target.value)}name = "description"  className="textareaInput" rows="10" placeholder="e.g. Google is looking for two software engineers who can dominate the world. "></textarea>
+                        <textarea onChange={e => setDescription(e.target.value)} name="description" className="textareaInput" rows="10" placeholder="e.g. Google is looking for two software engineers who can dominate the world. "></textarea>
                     </div>
                 </div>
 
@@ -149,7 +149,7 @@ function Form() {
                     <img src={write} className="numberSize" />
                     <div className="questionBoxText">
                         <label className="label">Please describe any accomplishments of the individual.</label>
-                        <textarea onChange={e => setAccomplishments(e.target.value)}name = "accomplishments"  className="textareaInput" rows="10" placeholder="e.g. I created Google Maps and I graduated Summa Cum Laude at Harvard"></textarea>
+                        <textarea onChange={e => setAccomplishments(e.target.value)} name="accomplishments" className="textareaInput" rows="10" placeholder="e.g. I created Google Maps and I graduated Summa Cum Laude at Harvard"></textarea>
                     </div>
                 </div>
 
@@ -163,7 +163,7 @@ function Form() {
                             <label className="label">What are relevant skills or personal qualities the individual possesses?</label>
                             <label className="optional">Optional</label>
                         </div>
-                        <textarea onChange={e => setSkills(e.target.value)}name = "skills" className="textareaInput" rows="10" placeholder="e.g. I am fluent in React.js and in Python. I also have a very curious mind."></textarea>
+                        <textarea onChange={e => setSkills(e.target.value)} name="skills" className="textareaInput" rows="10" placeholder="e.g. I am fluent in React.js and in Python. I also have a very curious mind."></textarea>
                     </div>
                 </div>
 
@@ -182,7 +182,7 @@ function Form() {
                     <br />
 
 
-                    <div className="styleContainer" onChange={(e)=> setStyle(e.target.id)}>
+                    <div className="styleContainer" onChange={(e) => setStyle(e.target.id)}>
                         <input type="radio" id="formal" className="radioButton" name="writingStyle" ></input>
                         <label htmlFor="formal" className="styleContainerText">
                             <h3>Formal</h3>
@@ -195,7 +195,7 @@ function Form() {
 
                     <br />
 
-                    <div className="styleContainer" onChange={(e)=> setStyle(e.target.id)}>
+                    <div className="styleContainer" onChange={(e) => setStyle(e.target.id)}>
                         <input type="radio" id="narrative" className="radioButton" name="writingStyle"></input>
                         <label htmlFor="narrative" className="styleContainerText">
                             <h3>Narrative</h3>
@@ -208,7 +208,7 @@ function Form() {
 
                     <br />
 
-                    <div className="styleContainer" onChange={(e)=> setStyle(e.target.id)}>
+                    <div className="styleContainer" onChange={(e) => setStyle(e.target.id)}>
                         <input type="radio" id="bulletPoint" className="radioButton" name="writingStyle"></input>
                         <label htmlFor="bulletPoint" className="styleContainerText">
                             <h3>Bullet Point</h3>
@@ -221,7 +221,7 @@ function Form() {
 
                     <br />
 
-                    <div className="styleContainer" onChange={(e)=> setStyle(e.target.id)}>
+                    <div className="styleContainer" onChange={(e) => setStyle(e.target.id)}>
                         <input type="radio" id="comparative" className="radioButton" name="writingStyle"></input>
                         <label htmlFor="comparative" className="styleContainerText">
                             <h3>Comparative</h3>
@@ -234,7 +234,7 @@ function Form() {
 
                     <br />
 
-                    <div className="styleContainer" onChange={(e)=> setStyle(e.target.id)}>
+                    <div className="styleContainer" onChange={(e) => setStyle(e.target.id)}>
                         <input type="radio" id="persuasive" className="radioButton" name="writingStyle"></input>
                         <label htmlFor="persuasive" className="styleContainerText">
                             <h3>Persuasive</h3>
@@ -258,13 +258,13 @@ function Form() {
 
                 </div>
 
-            
+
                 <br />
                 <br />
 
                 <div className="submitWrapper">
 
-                    <input type="submit" className="submitButton"></input>
+                    <input type="submit" className="button-28"></input>
                 </div>
 
 
@@ -275,8 +275,8 @@ function Form() {
 
             {isLoading ? <Loading /> : null}
 
-            
-            {hasCalledAPI ? <Output response={response}/> : null}
+
+            {hasCalledAPI ? <Output response={response} /> : null}
 
 
         </div >

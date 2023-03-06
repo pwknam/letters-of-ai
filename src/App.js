@@ -8,7 +8,7 @@ import React, { useState } from 'react'
 
 import PastLetters from './PastLetters';
 
-import logo from './images/logoLogo.svg'
+import logo from './images/newLogo.svg'
 
 function App() {
 
