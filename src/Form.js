@@ -1,41 +1,48 @@
 import React from "react";
 import { useState } from 'react';
 import './App.css';
+
+//components
 import Question from "./Question";
+import Loading from "./Loading";
+import Output from "./Output";
+
 //images
 import number from './images/number.svg'
 import number2 from './images/number_2.svg'
 import number3 from './images/number_3.svg'
 import number4 from './images/number_4.svg'
 import number5 from './images/number_5.svg'
-import number6 from './images/number_6.svg'
-import number7 from './images/number_7.svg'
-import number8 from './images/number_8.svg'
-import number9 from './images/number_9.svg'
-import number10 from './images/number_10.svg'
-import number11 from './images/number_11.svg'
+import paste from './images/paste.svg'
+import select from './images/select.svg'
+import write from './images/write.svg'
+
 
 
 
 
 
 function Form() {
-   
-    
+
+    const [isLoading, setIsLoading] = useState(true)
+    const [hasCalledAPI, setHasCalledAPI] = useState(true)
+
+
     return (
         <div>
             <div className="formTitle">
-                <h1>Letter of Recommendation</h1>
-                <h2> Let's Begin Writing!</h2>
-                <p>Please answer as many questions as possible</p>
+                <h1 className="headTitle">Letter of Recommendation</h1>
+                <h2 className="headSub"> Let's Begin Writing!</h2>
+                <p className="headP">Please answer as many questions as possible</p>
             </div>
 
+            <br />
             <br />
 
             <form className="inputForm">
 
                 <div className="questionBox">
-                    <img src={number} className="numberSize" />
+                    <img src={write} className="numberSize" />
                     <div className="questionBoxText">
                         <label className="label">Who are you writing this letter for?</label>
                         <input type="text" className="input" placeholder="e.g. Michelle Choi and Kyushik Nam"></input>
@@ -46,7 +53,7 @@ function Form() {
                 <br />
 
                 <div className="questionBox">
-                    <img src={number2} className="numberSize" />
+                    <img src={write} className="numberSize" />
                     <div className="questionBoxText">
                         <label className="label">What is your relationship with the applicant?</label>
                         <input type="text" className="input" placeholder="e.g. I boss Kyushik around and tell him what to do."></input>
@@ -57,10 +64,22 @@ function Form() {
                 <br />
 
                 <div className="questionBox">
-                    <img src={number3} className="numberSize" />
+                    <img src={paste} className="numberSize" />
                     <div className="questionBoxText">
-                        <label className="label">What is the name of the company?</label>
-                        <input type="text" className="input" placeholder="e.g. Apple, Inc."></input>
+                        <label className="label">Please paste the job description.</label>
+                        <textarea className="textareaInput" rows="10" placeholder="e.g. Google is looking for two software engineers who can dominate the world. "></textarea>
+                    </div>
+                </div>
+
+
+                <br />
+                <br />
+
+                <div className="questionBox">
+                    <img src={write} className="numberSize" />
+                    <div className="questionBoxText">
+                        <label className="label">Please describe any accomplishments of the individual.</label>
+                        <textarea className="textareaInput" rows="10" placeholder="e.g. I created Google Maps and I graduated Summa Cum Laude at Harvard"></textarea>
                     </div>
                 </div>
 
@@ -68,99 +87,13 @@ function Form() {
                 <br />
 
                 <div className="questionBox">
-                    <img src={number4} className="numberSize" />
-                    <div className="questionBoxText">
-                        <label className="label">What is the job title?</label>
-                        <input type="text" className="input" placeholder="e.g. Software Engineer on Apple Pay"></input>
-                    </div>
-                </div>
-
-                <br />
-                <br />
-
-                <div className="questionBox">
-                    <img src={number5} className="numberSize" />
-                    <div className="questionBoxText">
-                        <label className="label">What is the job description?</label>
-                        <textarea className="textareaInput" rows="10" placeholder="e.g. Make sure you develop a product that overchages and under delivers. "></textarea>
-                    </div>
-                </div>
-
-                <br />
-                <br />
-
-                <div className="questionBox">
-                    <img src={number6} className="numberSize" />
-                    <div className="questionBoxText">
-                        <label className="label">What are the job qualifications?</label>
-                        <textarea className="textareaInput" rows="10" placeholder="e.g. World domination mindset."></textarea>
-                    </div>
-                </div>
-
-                <br />
-                <br />
-
-                <div className="questionBox">
-                    <img src={number7} className="numberSize" />
-                    <div className="questionBoxText">
-                        <label className="label">Please describe any professional accomplishments of the individual.</label>
-                        <textarea className="textareaInput" rows="10" placeholder="e.g. This product."></textarea>
-                    </div>
-                </div>
-
-                <br />
-                <br />
-
-                <div className="questionBox">
-                    <img src={number8} className="numberSize" />
+                    <img src={write} className="numberSize" />
                     <div className="questionBoxText">
                         <div className="textWithOptional">
-                            <label className="label">What are relevant skills the individual possesses?</label>
+                            <label className="label">What are relevant skills or personal qualities the individual possesses?</label>
                             <label className="optional">Optional</label>
                         </div>
-                        <textarea className="textareaInput" rows="10" placeholder="e.g. All the programming languages."></textarea>
-                    </div>
-                </div>
-
-                <br />
-                <br />
-
-                <div className="questionBox">
-                    <img src={number9} className="numberSize" />
-                    <div className="questionBoxText">
-                        <div className="textWithOptional">
-                            <label className="label">What personal qualities would you like to highlight?</label>
-                            <label className="optional">Optional</label>
-                        </div>
-                        <textarea className="textareaInput" rows="10" placeholder="e.g. Very generous."></textarea>
-                    </div>
-                </div>
-
-                <br />
-                <br />
-
-                <div className="questionBox">
-                    <img src={number10} className="numberSize" />
-                    <div className="questionBoxText">
-                        <div className="textWithOptional">
-                            <label className="label">What are some of the individual’s greatest strengths?</label>
-                            <label className="optional">Optional</label>
-                        </div>
-                        <textarea className="textareaInput" rows="10" placeholder="e.g. Positive."></textarea>
-                    </div>
-                </div>
-
-                <br />
-                <br />
-
-                <div className="questionBox">
-                    <img src={number11} className="numberSize" />
-                    <div className="questionBoxText">
-                        <div className="textWithOptional">
-                            <label className="label">What are some relevant academic accomplishments?</label>
-                            <label className="optional">Optional</label>
-                        </div>
-                        <textarea className="textareaInput" rows="10" placeholder="e.g. GED."></textarea>
+                        <textarea className="textareaInput" rows="10" placeholder="e.g. I am fluent in React.js and in Python. I also have a very curious mind."></textarea>
                     </div>
                 </div>
 
@@ -172,10 +105,12 @@ function Form() {
                 <h1 style={{ textAlign: "center" }}>Options</h1>
 
                 <div className="writingStylesDiv">
+                    <img src={select} className="numberSize" />
                     <label className="label">Writing Styles</label>
 
+
                     <br />
-                    <br />
+
 
                     <div className="styleContainer">
                         <input type="radio" id="formal" className="radioButton" name="writingStyle"></input>
@@ -254,6 +189,7 @@ function Form() {
 
                 </div>
                 <br />
+                <br />
                 <div className="submitWrapper">
 
                     <input type="submit" className="submitButton"></input>
@@ -264,6 +200,10 @@ function Form() {
 
             <br />
             <br />
+
+            {isLoading ? <Loading /> : null}
+            
+            {hasCalledAPI ? <Output/> : null}
 
         </div >
     )
