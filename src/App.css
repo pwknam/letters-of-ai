@@ -1,3 +1,6 @@
+*{
+  font-family: Arial, Helvetica, sans-serif
+}
 .App {
   margin-left: 10%;
   margin-right: 10%;
@@ -44,7 +47,31 @@
 /* app  */
 .navBar {
   display: flex;
-  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.companyName {
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.pages{
+  display: flex;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  margin-right: 60px;
+  color: #F67062;
+  font-weight: bold;
+}
+
+.linkImage{
+  width: 60px;
 }
 
 /* form  */
@@ -55,16 +82,16 @@
   align-items: center;
 }
 
-.headTitle{
+.headTitle {
   font-size: 50px;
   font-style: italic;
 }
 
-.headSub{
+.headSub {
   font-size: 30px;
 }
 
-.headP{
+.headP {
   font-size: 20px;
 }
 
@@ -163,7 +190,7 @@
   /* display: none; */
 }
 
-.submitWrapper{
+.submitWrapper {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -181,18 +208,18 @@
 
 /* Loading component */
 
-.loadingContainer{
+.loadingContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   /* border: 2.5px dotted #84B5EF; */
 }
 
-.loadingImage{
+.loadingImage {
   width: 400px;
 }
 
-.loadingText{
+.loadingText {
   /* font-weight: bold; */
   color: #F67062;
   font-size: 30px;
@@ -200,7 +227,19 @@
 
 /* output */
 
-.thankYou{
-  
+.thankYou {
+
   text-align: center;
+}
+
+/* PastLetters */
+
+.pastLettersHeader{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pastImage{
+  width: 100px;
 }

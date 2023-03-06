@@ -29,50 +29,50 @@ import write from './images/write.svg'
 function Form() {
 
 
-    const [prompt, setPrompt] = useState("");
+    const [prompt, setPrompt] = useState();
     const [response, setResponse] = useState("");
     const [name, setName] = useState()
     const [relationship, setRelationship] = useState()
     const [company, setCompany] = useState()
     useEffect(() => {
         console.log('Response:', response);
-      }, [response]);
-    
-  
+    }, [response]);
+
+
     const handleSubmit = (e) => {
-      e.preventDefault();
+        e.preventDefault();
 
-    setPrompt(prevPrompt => {
-        const updatedPrompt = `write me a letter of recommendation with 20 words for a candidate named ${name} who is applying for a job at ${company} who I have the following relationship with: ${relationship}`;
-        console.log(updatedPrompt); // this will log the updated prompt value
-        return updatedPrompt;
-      });
+        setPrompt(prevPrompt => {
+            const updatedPrompt = `write me a letter of recommendation with 20 words for a candidate named ${name} who is applying for a job at ${company} who I have the following relationship with: ${relationship}`;
+            console.log(updatedPrompt); // this will log the updated prompt value
+            return updatedPrompt;
+        });
 
-      
+
 
     };
 
-    useEffect(()=> {
+    useEffect(() => {
         axios
-        .post("http://localhost:8080/chat", { prompt })
-        .then((res) => {
-            // res.json()
-            console.log('CHECK ME!', prompt)
-            console.log(res)
-          // Update the response state with the server's response
-          
-          setResponse(prevRes => {
-            let newRes = res.data;
-            console.log("HERE", newRes)
+            .post("http://localhost:8080/chat", { prompt })
+            .then((res) => {
+                // res.json()
+                console.log('CHECK ME!', prompt)
+                console.log(res)
+                // Update the response state with the server's response
 
-            return newRes;
-          });
-        })
-        // .then(data => console.log(response))
-        .catch((err) => {
-          console.error(err);
-        });
-      }, [prompt])
+                setResponse(prevRes => {
+                    let newRes = res.data;
+                    console.log("HERE", newRes)
+
+                    return newRes;
+                });
+            })
+            // .then(data => console.log(response))
+            .catch((err) => {
+                console.error(err);
+            });
+    }, [prompt])
 
     const [isLoading, setIsLoading] = useState(true)
     const [hasCalledAPI, setHasCalledAPI] = useState(true)
@@ -107,7 +107,7 @@ function Form() {
                     <img src={write} className="numberSize" />
                     <div className="questionBoxText">
                         <label className="label">What is your relationship with the applicant?</label>
-                        <input onChange={e => setRelationship(e.target.value)}name = "relationship" type="text" className="input" placeholder="e.g. I boss Kyushik around and tell him what to do."></input>
+                        <input onChange={e => setRelationship(e.target.value)} name="relationship" type="text" className="input" placeholder="e.g. I boss Kyushik around and tell him what to do."></input>
                     </div>
                 </div>
 
@@ -228,18 +228,19 @@ function Form() {
                     </div>
 
                     <br />
-                    <br />
 
-                    <div className="questionBox">
+                    {/* <div className="questionBox">
                         <div className="questionBoxText">
                             <div className="textWithOptional">
                                 <label className="label">Maximum Word Count</label>
                             </div>
                             <input className="textareaInput" rows="10" placeholder="e.g. 500 words."></input>
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
+
+            
                 <br />
                 <br />
 
@@ -248,15 +249,15 @@ function Form() {
                     <input type="submit" className="submitButton"></input>
                 </div>
 
-            <p>{response}</p>
+                <p>{response}</p>
             </form >
 
             <br />
             <br />
 
             {isLoading ? <Loading /> : null}
-            
-            {hasCalledAPI ? <Output/> : null}
+
+            {hasCalledAPI ? <Output /> : null}
 
         </div >
     )
