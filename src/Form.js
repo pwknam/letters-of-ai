@@ -20,6 +20,8 @@ import number11 from './images/number_11.svg'
 
 
 function Form() {
+   
+    
     return (
         <div>
             <div className="formTitle">
@@ -189,7 +191,7 @@ function Form() {
                     <br />
 
                     <div className="styleContainer">
-                        <input type="radio" id="narrative" className="radioButton" name="writingStyle" ></input>
+                        <input type="radio" id="narrative" className="radioButton" name="writingStyle"></input>
                         <label htmlFor="narrative" className="styleContainerText">
                             <h3>Narrative</h3>
                             <ul>
