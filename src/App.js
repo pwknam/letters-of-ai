@@ -1,25 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
 import { Switch, Route, Link } from 'react-router-dom';
 import Form from './Form';
 import LandingPage from './LandingPage';
 
 import axios from "axios";
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 import PastLetters from './PastLetters';
+
+import logo from './images/logoLogo.svg'
 
 function App() {
 
 
   return (
-    <>
+
     <div className="App">
-<nav>
-  <Link to="/">Home</Link>
-  <Link to="/form">Form</Link>
-  <Link to="/pastletters">View Past Letters</Link>
-</nav>
+      <nav className='navBar'>
+        <Link className="companyName" to="/">Letters of AI</Link>
+
+        <div className='pages'>
+          <Link className="link" to="/form">Form</Link>
+          <Link className="link" to="/pastletters">View Past Letters</Link>
+        </div>
+
+        <Link to="/"><img src={logo} className="linkImage" /></Link>
+      </nav>
 
 
 
@@ -32,26 +38,14 @@ function App() {
           <Form />
         </Route>
 
-        <Route path="/pastletteres">
+        <Route path="/pastletters">
           <PastLetters />
         </Route>
 
 
-        
+
       </Switch>
     </div>
-        {/* <div>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={prompt}
-            onChange={(e) => setPrompt(e.target.value)}
-          />
-          <button type="submit">Submit</button>
-        </form>
-        <p>{response}</p>
-      </div> */}
-      </>
   );
 }
 
