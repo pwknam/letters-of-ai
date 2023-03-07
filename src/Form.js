@@ -12,11 +12,7 @@ import Output from "./Output";
 
 
 //images
-import number from './images/number.svg'
-import number2 from './images/number_2.svg'
-import number3 from './images/number_3.svg'
-import number4 from './images/number_4.svg'
-import number5 from './images/number_5.svg'
+
 import paste from './images/paste.svg'
 import select from './images/select.svg'
 import write from './images/write.svg'
@@ -281,7 +277,7 @@ function Form() {
             {isLoading ? <Loading /> : null}
 
 
-            {hasCalledAPI ? <Output response={response} /> : null}
+            {hasCalledAPI ? <Output response={response} name = {name}/> : null}
 
 
         </div >

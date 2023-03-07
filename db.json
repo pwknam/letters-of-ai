@@ -1,19 +1,24 @@
 {
-    "letters":[
-        {
-            "id":1,
-            "name": "Kyushik Nam",
-            "content": "Dear Mr. Musk: Please hire Kyushik Nam for chief product officer. He is super cool. K. Thanks. Bye."
-        },
-        {
-            "id":2,
-            "name": "Michelle Choi",
-            "content": "Dear Mr. Musk: Please hire Michelle Choi for chief product officer. He is super cool. K. Thanks. Bye."
-        },
-        {
-            "id":3,
-            "name": "Min",
-            "content": "Dear Mr. Musk: Please hire Min for chief product officer. He is super cool. K. Thanks. Bye."
-        }
-    ]
+  "letters": [
+    {
+      "id": 1,
+      "name": "Kyushik Nam",
+      "content": "Dear Mr. Musk: Please hire Kyushik Nam for chief product officer. He is super cool. K. Thanks. Bye."
+    },
+    {
+      "id": 2,
+      "name": "Michelle Choi",
+      "content": "Dear Mr. Musk: Please hire Michelle Choi for chief product officer. He is super cool. K. Thanks. Bye."
+    },
+    {
+      "id": 3,
+      "name": "Min",
+      "content": "Dear Mr. Musk: Please hire Min for chief product officer. He is super cool. K. Thanks. Bye."
+    },
+    {
+      "name": "Sally",
+      "content": "\n\nTo whom it may concern,\n\nI am writing this letter to recommend my classmate, Sally, for the software engineer position at Google Augmented Reality.\n\nHaving known Sally for many years, I can vouch that she is an outstanding individual with a wealth of knowledge and experience in the field of software engineering. She has proven her ability to develop innovative solutions to complex problems and is always eager to learn new technologies.\n\nSally is a highly skilled software engineer with extensive knowledge of React.js and a deep understanding of the development process. She has built an impressive Migraine App., demonstrating her engineering skills, attention to detail, and ability to work independently. Additionally, she is a great communicator, capable of conveying complex ideas to both technical and non-technical audiences.\n\nIn conclusion, I am confident that Sally is an ideal candidate for the software engineer position at Google Augmented Reality. Her knowledge, experience, and skills make her the perfect fit for the role.\n\nSincerely,\n\n[Your Name]",
+      "id": 4
+    }
+  ]
 }

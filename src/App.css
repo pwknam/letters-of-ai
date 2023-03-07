@@ -306,3 +306,10 @@
 .pastImage{
   width: 100px;
 }
+
+.saveButton{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
