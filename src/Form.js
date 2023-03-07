@@ -48,12 +48,6 @@ function Form() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // setPrompt(prevPrompt => {
-        //     const updatedPrompt = `write me a letter of recommendation with 20 words for a candidate named ${name} who is applying for a job at ${company} who I have the following relationship with: ${relationship}`;
-        //     console.log(updatedPrompt); // this will log the updated prompt value
-        //     return updatedPrompt;
-        // });
-
 
         setPrompt(prevPrompt => {
             const updatedPrompt = `write me a letter of recommendation with a ${style} style in ${words} words for a candidate named ${name} with these accomplishments: ${accomplishments} and these skills: ${skills} who is applying for with this job description ${description} who I have the following relationship with: ${relationship}`;
@@ -103,7 +97,7 @@ function Form() {
             <div className="formTitle">
                 <h1 className="headTitle">Letter of Recommendation</h1>
                 <h2 className="headSub"> Let's Begin Writing!</h2>
-                <p className="headP">Please answer as many questions as possible</p>
+                {/* <p className="headP">Please answer as many questions as possible</p> */}
             </div>
 
             <br />
@@ -126,7 +120,7 @@ function Form() {
                     <img src={write} className="numberSize" />
                     <div className="questionBoxText">
                         <label className="label">What is your relationship with the applicant?</label>
-                        <input onChange={e => setRelationship(e.target.value)} name="relationship" type="text" className="input" placeholder="e.g. I boss Kyushik around and tell him what to do."></input>
+                        <input onChange={e => setRelationship(e.target.value)} name="relationship" type="text" className="input" placeholder="e.g. I managed him for several years when we were both working at Apple."></input>
                     </div>
                 </div>
 
@@ -137,8 +131,25 @@ function Form() {
 
                     <img src={paste} className="numberSize" />
                     <div className="questionBoxText">
-                        <label className="label">Please paste the job description.</label>
-                        <textarea onChange={e => setDescription(e.target.value)} name="description" className="textareaInput" rows="10" placeholder="e.g. Google is looking for two software engineers who can dominate the world. "></textarea>
+                        <label className="label">Feel free to paste the link to the job posting, or copy and paste the job description below!</label>
+                        <div className="submitLink">
+                            <input  name="description" className="input" placeholder="e.g. www.linkedIn.com "></input>
+                            <button className="button-29">Submit</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <br/>
+
+
+                <div className="questionBox">
+
+                    <img src={paste} className="numberSize" />
+                    <div className="questionBoxText">
+
+                        <textarea onChange={e => setDescription(e.target.value)} name="description" className="textareaInput" rows="10" placeholder="e.g. Google is looking for two software engineers who can dominate the world... "></textarea>
                     </div>
                 </div>
 
@@ -248,14 +259,7 @@ function Form() {
 
                     <br />
 
-                    {/* <div className="questionBox">
-                        <div className="questionBoxText">
-                            <div className="textWithOptional">
-                                <label className="label">Maximum Word Count</label>
-                            </div>
-                            <input onChange={(e)=> setWords(e.target.value)} className="textareaInput" rows="10" placeholder="e.g. 500 words."></input>
-                        </div>
-                    </div> */}
+                   
 
                 </div>
 
@@ -277,7 +281,7 @@ function Form() {
             {isLoading ? <Loading /> : null}
 
 
-            {hasCalledAPI ? <Output response={response} name = {name}/> : null}
+            {hasCalledAPI ? <Output response={response} name={name} /> : null}
 
 
         </div >
