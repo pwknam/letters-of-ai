@@ -44,7 +44,6 @@ function Form() {
 
 
 
-
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -92,6 +91,7 @@ function Form() {
 
 
 
+
     return (
         <div>
             <div className="formTitle">
@@ -133,7 +133,7 @@ function Form() {
                     <div className="questionBoxText">
                         <label className="label">Feel free to paste the link to the job posting, or copy and paste the job description below!</label>
                         <div className="submitLink">
-                            <input  name="description" className="input" placeholder="e.g. www.linkedIn.com "></input>
+                            <input name="description" className="input" placeholder="e.g. www.linkedIn.com "></input>
                             <button className="button-29">Submit</button>
                         </div>
 
@@ -141,7 +141,7 @@ function Form() {
 
                 </div>
 
-                <br/>
+                <br />
 
 
                 <div className="questionBox">
@@ -184,7 +184,7 @@ function Form() {
 
                 {/* options */}
 
-                <h1 style={{ textAlign: "center" }}>Options</h1>
+                <h1 style={{ textAlign: "center", color: "#59C2E9" }}>Options</h1>
 
                 <div className="writingStylesDiv" >
                     <img src={select} className="numberSize" />
@@ -193,55 +193,51 @@ function Form() {
 
                     <br />
 
+                    <div style={{ display: "flex" }}>
+                        <div className="styleContainer" onChange={(e) => setStyle(e.target.id)}>
+                            <input type="radio" id="formal" name="writingStyle" ></input>
+                            <label htmlFor="formal">
+                                <h2>Formal</h2>
+                                <p>Professional tone.</p>
+                                <p>Often used for academic or job-related recommendations.</p>
+                            </label>
+                        </div>
 
-                    <div className="styleContainer" onChange={(e) => setStyle(e.target.id)}>
-                        <input type="radio" id="formal" className="radioButton" name="writingStyle" ></input>
-                        <label htmlFor="formal" className="styleContainerText">
-                            <h3>Formal</h3>
-                            <ul>
-                                <li>Professional tone.</li>
-                                <li>Often used for academic or job-related recommendations.</li>
-                            </ul>
-                        </label>
+                        <br />
+
+                        <div className="styleContainer" onChange={(e) => setStyle(e.target.id)}>
+                            <input type="radio" id="narrative" className="radioButton" name="writingStyle"></input>
+                            <label htmlFor="narrative" className="styleContainerText">
+                                <h2>Narrative</h2>
+                                <p>Storytelling format, highlighting the person’s achievements and qualities through anecdotes and examples.</p>
+                                <p>Often used for personal recommendations.</p>
+                            </label>
+                        </div>
                     </div>
 
                     <br />
 
-                    <div className="styleContainer" onChange={(e) => setStyle(e.target.id)}>
-                        <input type="radio" id="narrative" className="radioButton" name="writingStyle"></input>
-                        <label htmlFor="narrative" className="styleContainerText">
-                            <h3>Narrative</h3>
-                            <ul>
-                                <li>Storytelling format, highlighting the person’s achievements and qualities through anecdotes and examples.</li>
-                                <li>Often used for personal recommendations.</li>
-                            </ul>
-                        </label>
-                    </div>
+                    <div style={{ display: "flex" }}>
+                        <div className="styleContainer" onChange={(e) => setStyle(e.target.id)}>
+                            <input type="radio" id="bulletPoint" className="radioButton" name="writingStyle"></input>
+                            <label htmlFor="bulletPoint" className="styleContainerText">
+                                <h2>Bullet Point</h2>
+                                <p>Structured with short, concise statements that highlight the person’s skills and achievements.</p>
+                                <p>Often used when the recipient requires a quick summary of the person’s qualifications.</p>
+                            </label>
+                        </div>
 
-                    <br />
+                        <br />
 
-                    <div className="styleContainer" onChange={(e) => setStyle(e.target.id)}>
-                        <input type="radio" id="bulletPoint" className="radioButton" name="writingStyle"></input>
-                        <label htmlFor="bulletPoint" className="styleContainerText">
-                            <h3>Bullet Point</h3>
-                            <ul>
-                                <li>Structured with short, concise statements that highlight the person’s skills and achievements.</li>
-                                <li>Often used when the recommendation is part of an online application or when the recipient requires a quick summary of the person’s qualifications.</li>
-                            </ul>
-                        </label>
-                    </div>
+                        <div className="styleContainer" onChange={(e) => setStyle(e.target.id)}>
+                            <input type="radio" id="comparative" className="radioButton" name="writingStyle"></input>
+                            <label htmlFor="comparative" className="styleContainerText">
+                                <h2>Comparative</h2>
+                                <p>Compares the person to others in their field, highlighting their strengths and qualifications. </p>
+                                <p>Often used in academic or job-related recommendations.</p>
+                            </label>
+                        </div>
 
-                    <br />
-
-                    <div className="styleContainer" onChange={(e) => setStyle(e.target.id)}>
-                        <input type="radio" id="comparative" className="radioButton" name="writingStyle"></input>
-                        <label htmlFor="comparative" className="styleContainerText">
-                            <h3>Comparative</h3>
-                            <ul>
-                                <li>Compares the person to others in their field, highlighting their strengths and qualifications. </li>
-                                <li>Often used in academic or job-related recommendations.</li>
-                            </ul>
-                        </label>
                     </div>
 
                     <br />
@@ -249,17 +245,15 @@ function Form() {
                     <div className="styleContainer" onChange={(e) => setStyle(e.target.id)}>
                         <input type="radio" id="persuasive" className="radioButton" name="writingStyle"></input>
                         <label htmlFor="persuasive" className="styleContainerText">
-                            <h3>Persuasive</h3>
-                            <ul>
-                                <li>Includes strong statements of support and a clear endorsement of the person’s qualifications. </li>
-                                <li>Often used when the competition for a position is high or when the person being recommended is seeking a promotion or career change.</li>
-                            </ul>
+                            <h2>Persuasive</h2>
+                            <p>Includes strong statements of support and a clear endorsement of the person’s qualifications. </p>
+                            <p>Often used person being recommended is seeking a promotion or career change.</p>
                         </label>
                     </div>
 
                     <br />
 
-                   
+
 
                 </div>
 

@@ -120,12 +120,12 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .questionBoxText {
   width: 100%;
-  padding-left: 8px;
+  /* padding-left: px; */
   display: flex;
   flex-direction: column;
   color: #4B44BE;
@@ -297,23 +297,35 @@ display: flex;
 .styleContainer {
   display: flex;
   align-items: flex-start;
-  border-radius: 8px;
-  border: 2.5px solid #4B44BE;
-  width: 50%;
+  /* border-radius: 8px;
+  border: 2.5px solid #4B44BE; */
+  width: 450px;
+  height: 180px;
+  /* padding: 10px; */
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 
-.styleContainerText {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+.styleContainer label {
+  /* display: flex;
+  flex-direction: column; */
+  width: 450px;
+  height: 180px;
   padding-left: 20px;
   padding-right: 20px;
+  border-radius: 8px;
+  border: 2.5px solid #4B44BE;
 }
 
-.radioButton {
-  /* display: none; */
+.styleContainer input[type="radio"]:checked+label {
+  border: 2.5px solid red;
 }
+
+.styleContainer input {
+  display: none;
+}
+
 
 .submitWrapper {
   width: 100%;
