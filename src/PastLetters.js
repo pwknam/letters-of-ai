@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './App.css';
-import pastLogo from './images/pastLetters.svg'
+import pastLogo from './images/letter_1.svg'
 import PastLetterCard from "./PastLetterCard";
 import { useHistory } from "react-router-dom";
 
