@@ -43,17 +43,20 @@ function Form() {
     const [style, setStyle] = useState()
     const [words, setWords] = useState(300)
 
+    const [isLoading, setIsLoading] = useState(false)
+    const [hasCalledAPI, setHasCalledAPI] = useState(false)
+
 
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        setPrompt(prevPrompt => {
-            const updatedPrompt = `write me a letter of recommendation with 20 words for a candidate named ${name} who is applying for a job at ${company} who I have the following relationship with: ${relationship}`;
-            console.log(updatedPrompt); // this will log the updated prompt value
-            return updatedPrompt;
-        });
+        // setPrompt(prevPrompt => {
+        //     const updatedPrompt = `write me a letter of recommendation with 20 words for a candidate named ${name} who is applying for a job at ${company} who I have the following relationship with: ${relationship}`;
+        //     console.log(updatedPrompt); // this will log the updated prompt value
+        //     return updatedPrompt;
+        // });
 
 
         setPrompt(prevPrompt => {
@@ -61,6 +64,8 @@ function Form() {
             console.log(updatedPrompt); // this will log the updated prompt value
             return updatedPrompt;
         });
+
+        setIsLoading(true)
 
 
 
@@ -77,6 +82,8 @@ function Form() {
                     console.log(res)
                     // Update the response state with the server's response
 
+                    setHasCalledAPI(true)
+                    setIsLoading(false)
                     setResponse(prevRes => {
                         let newRes = res.data;
                         console.log("HERE", newRes)
@@ -92,8 +99,6 @@ function Form() {
 
     }, [prompt])
 
-    const [isLoading, setIsLoading] = useState(false)
-    const [hasCalledAPI, setHasCalledAPI] = useState(true)
 
 
 

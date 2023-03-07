@@ -12,7 +12,7 @@ function LandingPage() {
     
     return (
         <div className="landingPage">
-            <h1 style={{color: "#4B44BE"}}>Discover a new way to write letters!</h1>
+            <h1 style={{color: "#4B44BE", fontSize: "40px"}}>Discover a new way to write letters!</h1>
             <img src={woman} style={{width: "250px", height: "auto"}}/>
             <br/>
             <button onClick={handleClick} class="button-28">Let's Begin!</button>
