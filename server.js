@@ -6,7 +6,7 @@ const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
 
-  apiKey: "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",
+  apiKey: "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",
 
 });
 const openai = new OpenAIApi(configuration);
@@ -25,12 +25,12 @@ app.post("/chat", async (req, res) => {
   const completion = await openai.createCompletion({
     model: "text-davinci-003",
     prompt: prompt,
-    max_tokens:2048,
+    max_tokens: 2048,
     temperature: 0.6,
 
     stop: null,
   });
-//   console.log(completion.data)
+  //   console.log(completion.data)
   res.send(completion.data.choices[0].text);
 });
 
