@@ -1,12 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const puppeteer = require('puppeteer')
 
 const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
 
-  apiKey: "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",
+  apiKey: "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",
 
 });
 const openai = new OpenAIApi(configuration);
@@ -33,6 +34,36 @@ app.post("/chat", async (req, res) => {
   //   console.log(completion.data)
   res.send(completion.data.choices[0].text);
 });
+
+app.post('/scrape', async (req, res) => {
+  const url = req.body.url;
+  if (url !== ""){
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    await page.goto(url);
+    var jobDescription;
+    var parseJob = await page.evaluate(()=>{
+      if (document.getElementsByClassName('description').length>0){
+        jobDescription = document.getElementsByClassName('description')[0].innerText
+
+
+      }
+      else if (document.getElementsByClassName('job-description').length>0){
+        jobDescription = document.getElementsByClassName('job-description')[0].innerText
+
+      }
+
+      return [jobDescription]
+  })
+
+    // console.log(parseJob)
+    // const html = await page.content();
+    await browser.close();
+    res.send(parseJob);
+  }
+  else res.send("")
+});
+
 
 // Start the server
 const port = 8080;

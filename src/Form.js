@@ -41,7 +41,8 @@ function Form() {
 
     const [isLoading, setIsLoading] = useState(false)
     const [hasCalledAPI, setHasCalledAPI] = useState(false)
-
+    const [url, setURL] = useState("")
+    const [descriptionPlaceholder, setDescriptionPlaceholder] = useState()
 
 
     const handleSubmit = (e) => {
@@ -56,7 +57,7 @@ function Form() {
 
         setIsLoading(true)
 
-        console.log(document.getElementById("Loading"))
+        // console.log(document.getElementById("Loading"))
 
         // targetRef.current.scrollIntoView({ behavior: 'auto' })
 
@@ -70,7 +71,22 @@ function Form() {
 }
 
 
-    ;
+    useEffect(() => {
+        console.log(url)
+        axios
+            .post("http://localhost:8080/scrape", { url })
+            .then((res) => {
+                if(res.data){
+                    setDescriptionPlaceholder(res.data[0])
+                }
+                else setDescriptionPlaceholder("Sorry we can't parse this page!")
+                // console.log(res)
+            })
+            .catch((err) => {
+                console.error(err);
+            });
+    }, [url])
+
 
 
     useEffect(() => {
@@ -79,15 +95,15 @@ function Form() {
                 .post("http://localhost:8080/chat", { prompt })
                 .then((res) => {
                     // res.json()
-                    console.log('CHECK ME!', prompt)
-                    console.log(res)
+                    // console.log('CHECK ME!', prompt)
+                    // console.log(res)
                     // Update the response state with the server's response
 
                     setHasCalledAPI(true)
                     setIsLoading(false)
                     setResponse(prevRes => {
                         let newRes = res.data;
-                        console.log("HERE", newRes)
+                        // console.log("HERE", newRes)
 
                         return newRes;
                     });
@@ -145,8 +161,14 @@ function Form() {
                     <div className="questionBoxText">
                         <label className="label">Feel free to paste the link to the job posting, or copy and paste the job description below!</label>
                         <div className="submitLink">
-                            <input name="description" className="input" placeholder="e.g. www.linkedIn.com "></input>
-                            <button className="button-29">Submit</button>
+                            <input name="description" id="jobDescription" className="input" placeholder="e.g. www.linkedIn.com " ></input>
+                            <button onClick={(e)=> 
+                                {
+                                    e.preventDefault()
+                                    setURL(document.getElementById("jobDescription").value)
+                                    // console.log(document.getElementById("jobDescription").value)
+                                }
+                                } className="button-29">Submit</button>
                         </div>
 
                     </div>
@@ -161,7 +183,7 @@ function Form() {
                     <img src={paste} className="numberSize" />
                     <div className="questionBoxText">
 
-                        <textarea onChange={e => setDescription(e.target.value)} name="description" className="textareaInput" rows="10" placeholder="e.g. Google is looking for two software engineers who can dominate the world... "></textarea>
+                        <textarea defaultValue={descriptionPlaceholder} onChange={e => setDescription(e.target.value)} name="description" className="textareaInput" rows="10" placeholder="e.g. Google is looking for two software engineers who can dominate the world... "></textarea>
                     </div>
                 </div>
 
