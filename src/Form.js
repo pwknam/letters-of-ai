@@ -56,9 +56,21 @@ function Form() {
 
         setIsLoading(true)
 
+        console.log(document.getElementById("Loading"))
+
+        // targetRef.current.scrollIntoView({ behavior: 'auto' })
+
+        setTimeout(()=> 
+        {window.scrollBy({
+            top: 800,
+            behavior: "smooth"
+        })
+    }, 
+    1500)
+}
 
 
-    };
+    ;
 
 
     useEffect(() => {
@@ -184,11 +196,11 @@ function Form() {
 
                 {/* options */}
 
-                <h1 style={{ textAlign: "center", color: "#59C2E9" }}>Options</h1>
+                <h1 style={{ textAlign: "center", color: "#F67062" }}>Options</h1>
 
                 <div className="writingStylesDiv" >
                     <img src={select} className="numberSize" />
-                    <label className="label">Writing Styles</label>
+                    <label className="subLabel">Writing Styles</label>
 
 
                     <br />
@@ -207,7 +219,7 @@ function Form() {
 
                         <div className="styleContainer" onChange={(e) => setStyle(e.target.id)}>
                             <input type="radio" id="narrative" className="radioButton" name="writingStyle"></input>
-                            <label htmlFor="narrative" className="styleContainerText">
+                            <label htmlFor="narrative" >
                                 <h2>Narrative</h2>
                                 <p>Storytelling format, highlighting the person’s achievements and qualities through anecdotes and examples.</p>
                                 <p>Often used for personal recommendations.</p>
@@ -220,7 +232,7 @@ function Form() {
                     <div style={{ display: "flex" }}>
                         <div className="styleContainer" onChange={(e) => setStyle(e.target.id)}>
                             <input type="radio" id="bulletPoint" className="radioButton" name="writingStyle"></input>
-                            <label htmlFor="bulletPoint" className="styleContainerText">
+                            <label htmlFor="bulletPoint" >
                                 <h2>Bullet Point</h2>
                                 <p>Structured with short, concise statements that highlight the person’s skills and achievements.</p>
                                 <p>Often used when the recipient requires a quick summary of the person’s qualifications.</p>
@@ -231,7 +243,7 @@ function Form() {
 
                         <div className="styleContainer" onChange={(e) => setStyle(e.target.id)}>
                             <input type="radio" id="comparative" className="radioButton" name="writingStyle"></input>
-                            <label htmlFor="comparative" className="styleContainerText">
+                            <label htmlFor="comparative" >
                                 <h2>Comparative</h2>
                                 <p>Compares the person to others in their field, highlighting their strengths and qualifications. </p>
                                 <p>Often used in academic or job-related recommendations.</p>
@@ -244,7 +256,7 @@ function Form() {
 
                     <div className="styleContainer" onChange={(e) => setStyle(e.target.id)}>
                         <input type="radio" id="persuasive" className="radioButton" name="writingStyle"></input>
-                        <label htmlFor="persuasive" className="styleContainerText">
+                        <label htmlFor="persuasive" >
                             <h2>Persuasive</h2>
                             <p>Includes strong statements of support and a clear endorsement of the person’s qualifications. </p>
                             <p>Often used person being recommended is seeking a promotion or career change.</p>
@@ -260,6 +272,25 @@ function Form() {
 
                 <br />
                 <br />
+                <br />
+
+                <div className="wordCountContainer">
+                    <label className="subLabel">Maximum Word Count</label>
+                </div>
+
+
+                <div className="questionBox">
+                    <img src={write} className="numberSize" />
+                    <div className="questionBoxText">
+                        <label className="label">How long do you want your letter to be?</label>
+                        <input type="text" className="input" placeholder="e.g. Less than 500 words"></input>
+                    </div>
+                </div>
+
+
+                <br />
+                <br />
+
 
                 <div className="submitWrapper">
 
@@ -272,7 +303,9 @@ function Form() {
             <br />
             <br />
 
-            {isLoading ? <Loading /> : null}
+            <div id="Loading">
+                {isLoading ? <Loading name={name}/> : null}
+            </div>
 
 
             {hasCalledAPI ? <Output response={response} name={name} /> : null}
