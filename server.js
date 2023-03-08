@@ -7,7 +7,7 @@ const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
 
-  apiKey: "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",
+  apiKey: "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",
 
 });
 const openai = new OpenAIApi(configuration);
@@ -38,8 +38,8 @@ app.post("/chat", async (req, res) => {
 app.post('/scrape', async (req, res) => {
   const url = req.body.url;
   if (url !== ""){
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
+    let browser = await puppeteer.launch();
+    let page = await browser.newPage();
     await page.goto(url);
     var jobDescription;
     var parseJob = await page.evaluate(()=>{
