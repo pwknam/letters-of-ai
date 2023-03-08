@@ -79,8 +79,8 @@ function Form() {
                 if(res.data){
                     setDescriptionPlaceholder(res.data[0])
                 }
-                else setDescriptionPlaceholder("Sorry we can't parse this page!")
-                // console.log(res)
+                else if (url = "") {setDescriptionPlaceholder(null)}
+                else setDescriptionPlaceholder("Sorry we can't parse this page! Try a different link or copy/paste the job description into this box.")
             })
             .catch((err) => {
                 console.error(err);
@@ -94,21 +94,14 @@ function Form() {
             axios
                 .post("http://localhost:8080/chat", { prompt })
                 .then((res) => {
-                    // res.json()
-                    // console.log('CHECK ME!', prompt)
-                    // console.log(res)
-                    // Update the response state with the server's response
-
                     setHasCalledAPI(true)
                     setIsLoading(false)
                     setResponse(prevRes => {
                         let newRes = res.data;
-                        // console.log("HERE", newRes)
 
                         return newRes;
                     });
                 })
-                // .then(data => console.log(response))
                 .catch((err) => {
                     console.error(err);
                 });
