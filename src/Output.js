@@ -39,6 +39,8 @@ function Output({ response, name }) {
             <h1>Letter of Recommendation</h1>
             <p>Edit and copy for your own use, or resubmit to generate another version!</p>
             <textarea className="textareaInput" rows="20" defaultValue={response}></textarea>
+            <br />
+            <br />
             <div className="saveButton">
                 <button className="button-28" onClick={handlePOST}>{isSave ? "Letter Saved" : "Save"}</button>
                 <button className="button-28" onClick={handleCopyClick}>{isCopy ? "Copied" : "Copy"}</button>
