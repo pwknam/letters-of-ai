@@ -294,7 +294,7 @@ function RecForm() {
                 <div className="wordCountContainer">
                     <label className="subLabel">Maximum Word Count</label>
                 </div>
-
+                <br />
 
                 <div className="questionBox">
                     <img src={write} className="numberSize" />
