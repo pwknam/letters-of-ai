@@ -8,7 +8,7 @@ import Question from "./Question";
 import axios from "axios";
 
 import Loading from "./Loading";
-import Output from "./Output";
+import OutputCoverForm from "./OutputCoverForm";
 
 
 //images
@@ -229,7 +229,7 @@ function CoverForm() {
                             </label>
                         </div> */}
 
-                        <br />
+                    
 
                         {/* <div className="styleContainer" onChange={(e) => setStyle(e.target.id)}>
                             <input type="radio" id="comparative" className="radioButton" name="writingStyle"></input>
@@ -298,7 +298,7 @@ function CoverForm() {
             </div>
 
 
-            {hasCalledAPI ? <Output response={response} name={name} /> : null}
+            {hasCalledAPI ? <OutputCoverForm response={response} name={name} /> : null}
 
 
         </div >
