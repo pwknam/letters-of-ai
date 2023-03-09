@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './App.css';
 
-function Output({ response, name }) {
+function OutputCoverForm({ response, name }) {
     const [isCopy, setIsCopy] = useState(false)
     const [isSave, setIsSave] = useState(false)
 
@@ -10,7 +10,7 @@ function Output({ response, name }) {
         console.log({ response })
         console.log({ name })
 
-        fetch("http://localhost:3000/letters", {
+        fetch("http://localhost:3000/CoverLetters", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -54,4 +54,4 @@ function Output({ response, name }) {
     )
 }
 
-export default Output
+export default OutputCoverForm

@@ -8,7 +8,7 @@ import Question from "./Question";
 import axios from "axios";
 
 import Loading from "./Loading";
-import Output from "./Output";
+import OutputRecForm from "./OutputRecForm";
 
 
 //images
@@ -325,7 +325,7 @@ function RecForm() {
             </div>
 
 
-            {hasCalledAPI ? <Output response={response} name={name} /> : null}
+            {hasCalledAPI ? <OutputRecForm response={response} name={name} /> : null}
 
 
         </div >

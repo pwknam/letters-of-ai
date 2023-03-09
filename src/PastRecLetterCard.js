@@ -2,7 +2,7 @@ import React from "react";
 import './App.css';
 
 
-function PastLetterCard({letterData}) {
+function PastRecLetterCard({letterData}) {
     return (
         <div>
             <h1 style={{color: "#4B44BE"}}>Written for {letterData.name}</h1>
@@ -11,4 +11,4 @@ function PastLetterCard({letterData}) {
     )
 }
 
-export default PastLetterCard
+export default PastRecLetterCard

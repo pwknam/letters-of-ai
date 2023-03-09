@@ -1,25 +1,38 @@
 import React, { useEffect, useState } from "react";
 import './App.css';
 import pastLogo from './images/letter_1.svg'
-import PastLetterCard from "./PastLetterCard";
+import PastRecLetterCard from "./PastRecLetterCard";
+import PastCoverLetterCard from "./PastCoverLetterCard";
 import { useHistory } from "react-router-dom";
 
 function PastLetters() {
-    const [letters, setLetters] = useState([])
+    const [recLetters, setRecLetters] = useState([])
+    const [coverLetters, setCoverLetters] = useState([])
+
     useEffect(() => {
-        fetch("http://localhost:3000/letters")
+        fetch("http://localhost:3000/RecLetters")
             .then((r) => r.json())
-            .then((data) => setLetters(data))
+            .then((data) => setRecLetters(data))
     }, [])
 
-    const renderLetters = letters.map((letter) => {
-        return <PastLetterCard key={letter.id} letterData={letter} />
+    const renderRecLetters = recLetters.map((letter) => {
+        return <PastRecLetterCard key={letter.id} letterData={letter} />
     })
 
-    const history = useHistory() 
+    useEffect(() => {
+        fetch("http://localhost:3000/CoverLetters")
+            .then((r) => r.json())
+            .then((data) => setCoverLetters(data))
+    }, [])
 
-    function handleClick(){
-        history.push("/form")
+    const renderCoverLetters = coverLetters.map((coverLetter) => {
+        return <PastCoverLetterCard key={coverLetter.id} coverLetterData={coverLetter} />
+    })
+
+    const history = useHistory()
+
+    function handleClick() {
+        history.push("/")
     }
 
 
@@ -30,10 +43,14 @@ function PastLetters() {
                 <img src={pastLogo} className="pastImage" />
             </div>
             <br />
-            {renderLetters}
+            <h1 className="pastLettersHeader" style={{ color: "#F67062" }}>Recommendation Letters</h1>
+            {renderRecLetters}
+            <br />
+            <h1 className="pastLettersHeader" style={{ color: "#F67062" }}>Cover Letters</h1>
+            {renderCoverLetters}
             <br />
             <div className="saveButton">
-                <button onClick={handleClick}className="button-28">Go Write!</button>
+                <button onClick={handleClick} className="button-28">Let's Write Again</button>
             </div>
 
         </div>

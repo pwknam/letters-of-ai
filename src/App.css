@@ -253,6 +253,14 @@
   align-items: center;
 }
 
+.homeButtons{
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  width: 100%;
+  /* margin: 0; */
+}
+
 .button-28 {
   appearance: none;
   background-color: transparent;

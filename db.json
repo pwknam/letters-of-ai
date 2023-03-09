@@ -1,44 +1,46 @@
 {
-  "letters": [
-    {
-      "id": 1,
-      "name": "Kyushik Nam",
-      "content": "Dear Mr. Musk: Please hire Kyushik Nam for chief product officer. He is super cool. K. Thanks. Bye."
-    },
-    {
-      "id": 2,
-      "name": "Michelle Choi",
-      "content": "Dear Mr. Musk: Please hire Michelle Choi for chief product officer. He is super cool. K. Thanks. Bye."
-    },
-    {
-      "id": 3,
-      "name": "Min",
-      "content": "Dear Mr. Musk: Please hire Min for chief product officer. He is super cool. K. Thanks. Bye."
-    },
+  "RecLetters": [
     {
       "name": "Sally",
       "content": "\n\nTo whom it may concern,\n\nI am writing this letter to recommend my classmate, Sally, for the software engineer position at Google Augmented Reality.\n\nHaving known Sally for many years, I can vouch that she is an outstanding individual with a wealth of knowledge and experience in the field of software engineering. She has proven her ability to develop innovative solutions to complex problems and is always eager to learn new technologies.\n\nSally is a highly skilled software engineer with extensive knowledge of React.js and a deep understanding of the development process. She has built an impressive Migraine App., demonstrating her engineering skills, attention to detail, and ability to work independently. Additionally, she is a great communicator, capable of conveying complex ideas to both technical and non-technical audiences.\n\nIn conclusion, I am confident that Sally is an ideal candidate for the software engineer position at Google Augmented Reality. Her knowledge, experience, and skills make her the perfect fit for the role.\n\nSincerely,\n\n[Your Name]",
-      "id": 4
+      "id": 1
     },
     {
       "name": "Lauren",
       "content": "\n\nTo Whom it May Concern:\n\nI am writing in support of Lauren for the position of Physician with OpenLoop. I had the pleasure of teaching Lauren at medical school, where she completed her medical degree.\n\nLauren is an exceptional candidate for the position. She is a highly skilled medical professional who is capable of providing patient care with a high level of compassion and empathy. She is board-certified and has a minimum of two years experience as a practicing physician. She has an active, non-restrictive medical license to practice in Mississippi, and is competent in providing patient education at every visit. Additionally, she is highly competent in evidence-based practice and has strong problem solving, project management and organization skills.\n\nWhat sets Lauren apart from other candidates is her ability to code. She is able to use technology to assist patients with troubleshooting technical difficulties that may occur in the home environment. She has excellent communication and interpersonal skills, and is fluent in Spanish, both written and spoken.\n\nIn conclusion, I am confident that Lauren is the ideal candidate for the position of Physician with OpenLoop. Her experience, skills, and dedication to her work make her an invaluable asset to the company. I am certain that she will be an asset to the team and I highly recommend her for the position.\n\nSincerely,\n\n[Your Name]",
-      "id": 5
+      "id": 2
     },
     {
       "name": "Tim Cook",
       "content": "\n\nI am pleased to write a letter of recommendation for Tim Cook, who I had the pleasure of working with as the VP of Product at Apple. During his tenure as CEO of Apple, Tim demonstrated an impressive set of skills and accomplishments. \n\nTim has always had a knack for understanding how to design a supply chain that delivers products to consumers within a couple of days from purchase. His leadership and keen eye for detail allowed him to develop a well-oiled machine that delivered products quickly and efficiently. He was also an excellent problem solver and was able to quickly identify areas of improvement and develop solutions to optimize the supply chain.\n\nTim’s attention to detail and drive to create the best possible product experience for customers was unparalleled. He was always looking for ways to improve the customer experience and was able to develop innovative ideas that were subsequently implemented. He was also an excellent communicator and was able to effectively communicate his ideas and vision to the team. \n\nIn addition to his technical skills, Tim is an excellent leader and was able to motivate and inspire those around him. He was always looking for ways to help his team reach their full potential and was willing to go above and beyond to make sure the team was successful. \n\nI strongly recommend Tim for the INTERN UI/UX Designer App and Website position at Samsung. With his technical skills, leadership abilities, and passion for creating the best customer experience, I am confident that he will be an asset to the team. \n\nSincerely, \n[Your Name]",
-      "id": 6
+      "id": 3
     },
     {
       "name": "Finn",
       "content": "\n\nTo Whom it May Concern,\n\nIt is with great pleasure that I am writing this letter of recommendation for Finn, my friend and classmate. Finn is an extremely talented individual who is applying for a job as an engineering project coordinator. He is a highly motivated individual with a great deal of potential and is well-suited to this position.\n\nFinn has a unique fashion sense and is always wearing the latest trends. He also has a great eye for detail and an excellent work ethic that I have witnessed in our studies together. He is a creative and innovative thinker who is always looking for ways to improve processes and increase efficiency.\n\nFinn has expressed his ambition to become a film director one day and has the necessary skills to make it happen. He is an excellent communicator and is able to effectively express his ideas to others. He is also an excellent problem solver and is adept at finding solutions to difficult problems.\n\nOverall, I believe Finn is an excellent candidate for this position and would be an asset to any team. He has the necessary skills and experience to be successful in this role and I am confident he will be able to contribute significantly to the success of the organization.\n\nSincerely,\n\n[Your Name]",
-      "id": 7
+      "id": 4
     },
     {
       "name": "Kyushik Nam",
       "content": "\n\nTo Whom It May Concern:\n\nIt is my pleasure to provide a letter of recommendation for Kyushik Nam. I had the pleasure of managing Mr. Nam while he was working at Google, and can attest to his exemplary character and professional accomplishments.\n\nMr. Nam's primary accomplishment was creating Google Maps, a feat for which he should be commended and which speaks volumes about his impressive skill set. He is an expert in C++, a programming language which is essential in the development of modern applications. His knowledge and experience with C++ is sure to be an asset to any company.\n\nIn addition to his technical skills, Mr. Nam is an excellent communicator, both verbally and in writing. He is able to explain complex concepts in a way that is easy to understand, and is able to work with a variety of people. He is also highly organized, and able to manage multiple tasks and projects simultaneously.\n\nMr. Nam is an outstanding individual, and I am confident that he would be an excellent addition to any team. His skills and experience make him an ideal candidate for the job he is applying for, and I highly recommend him for the position.\n\nSincerely,\n\n[Your Name]",
-      "id": 8
+      "id": 5
+    },
+    {
+      "name": "Kyushik Nam",
+      "content": "\n\nTo whom it may concern:\n\nIt is my pleasure to provide this letter of recommendation for Kyushik Nam. I had the pleasure of managing Kyushik during his tenure at Apple, where he was part of the team that designed the first iPhone with Steve Jobs and Sir Jony Ive.\n\nKyushik is an incredibly talented product manager and leader. He has demonstrated an impressive ability to lead a team to develop high-tech products. His technical aptitude is matched by his creative acumen and ability to think strategically. He is a highly organized and detail-oriented individual who excels at problem-solving and developing innovative solutions.\n\nKyushik is an excellent communicator who is able to effectively collaborate with engineers, designers, data scientists, and other cross-functional teams. His ability to thinking creatively and approach problems with a system-level mindset is invaluable. He is also highly analytical and skilled in the creation of delightful, polished, and performant products for customers in every market and on any device.\n\nIn addition to his technical skills, Kyushik is a natural leader. He is able to build trust and alignment with stakeholders, and is able to communicate his vision concisely and influence outcomes. He is also able to independently initiate and drive projects to completion with minimal guidance and speed of execution.\n\nKyushik is an exceptional candidate for the Product Manager, Creative Tools role at Snap Inc. His combination of technical expertise, leadership skills, and creative problem-solving abilities make him an ideal fit for this position. I highly recommend him for this role and am confident that he will be a great asset to the team.\n\nSincerely,\n[Your Name]",
+      "id": 6
+    }
+  ],
+  "CoverLetters": [
+    {
+      "name": "Kyushik",
+      "content": "Give him the job please",
+      "id": 1
+    },
+    {
+      "name": "Michelle Choi",
+      "content": ", Computer Software, Internet\n\n\nDear Snap Inc,\n\nI am writing to apply for the position of Product Manager, Creative Tools with Snap Inc. As a passionate and experienced Product Manager, I am confident that I possess the necessary skills and experience to be an asset to your team.\n\nI bring to the table a wealth of knowledge and experience in product management, having successfully developed Google Maps from scratch. I have strong analytical skills and experience with AB testing, and I am skilled in the creation of delightful, polished, and performant products for customers in any market and on any device. Additionally, I am adept at collaborating and building trust with engineers, designers, data science, and other cross-functional teammates.\n\nI am also very familiar with the software development process, product design, and interaction design, and have experience shipping products at a consumer technology company. I have a direct experience working on creative tools with a specialization in AR tools or video editing tools for creators, as well as experience working on consumer social or visual communication/messaging products such as stories.\n\nI am eager to use my skills and experience in product management to help Snap Inc. succeed in its mission to empower people to express themselves, live in the moment, learn about the world, and have fun together. I believe that I can make a positive contribution to your team and help you achieve your goals.\n\nThank you for your consideration and I look forward to hearing from you.\n\nSincerely,\n\nMichelle Choi",
+      "id": 2
     }
   ]
 }

@@ -21,7 +21,7 @@ function App() {
         <Link className="companyName" to="/">Letters of AI</Link>
 
         <div className='pages'>
-          <Link className="link" to="/recform">Letter of Rec</Link>
+          <Link className="link" to="/recform">Recommendation Letter</Link>
           <Link className="link" to="/coverform">Cover Letter</Link>
           <Link className="link" to="/pastletters">View Past Letters</Link>
         </div>
