@@ -1,6 +1,7 @@
 import './App.css';
 import { Switch, Route, Link } from 'react-router-dom';
-import Form from './Form';
+import RecForm from './RecForm';
+import CoverForm from './CoverForm';
 import LandingPage from './LandingPage';
 
 import axios from "axios";
@@ -20,7 +21,8 @@ function App() {
         <Link className="companyName" to="/">Letters of AI</Link>
 
         <div className='pages'>
-          <Link className="link" to="/form">Form</Link>
+          <Link className="link" to="/recform">Letter of Rec</Link>
+          <Link className="link" to="/coverform">Cover Letter</Link>
           <Link className="link" to="/pastletters">View Past Letters</Link>
         </div>
 
@@ -34,8 +36,12 @@ function App() {
           <LandingPage />
         </Route>
 
-        <Route path="/form">
-          <Form />
+        <Route path="/recform">
+          <RecForm />
+        </Route>
+
+        <Route path="/coverform">
+          <CoverForm />
         </Route>
 
         <Route path="/pastletters">

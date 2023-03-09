@@ -22,7 +22,7 @@ import write from './images/write.svg'
 
 
 
-function Form() {
+function RecForm() {
 
 
 
@@ -56,6 +56,7 @@ function Form() {
         });
 
         setIsLoading(true)
+        setHasCalledAPI(false)
 
         // console.log(document.getElementById("Loading"))
 
@@ -78,6 +79,7 @@ function Form() {
             .then((res) => {
                 if(res.data){
                     setDescriptionPlaceholder(res.data[0])
+                    setDescription(res.data[0])
                 }
                 else if (url = "") {setDescriptionPlaceholder(null)}
                 else setDescriptionPlaceholder("Sorry we can't parse this page! Try a different link or copy/paste the job description into this box.")
@@ -96,9 +98,9 @@ function Form() {
                 .then((res) => {
                     setHasCalledAPI(true)
                     setIsLoading(false)
+                    console.log(res)
                     setResponse(prevRes => {
                         let newRes = res.data;
-
                         return newRes;
                     });
                 })
@@ -161,7 +163,7 @@ function Form() {
                                     setURL(document.getElementById("jobDescription").value)
                                     // console.log(document.getElementById("jobDescription").value)
                                 }
-                                } className="button-29">Submit</button>
+                                } className="button-29">Parse</button>
                         </div>
 
                     </div>
@@ -297,8 +299,8 @@ function Form() {
                 <div className="questionBox">
                     <img src={write} className="numberSize" />
                     <div className="questionBoxText">
-                        <label className="label">How long do you want your letter to be?</label>
-                        <input type="text" className="input" placeholder="e.g. Less than 500 words"></input>
+                    <label className="label">Approximately how many words should the letter be?</label>
+                    <input onChange={e=> setWords(e.target.value)} type="text" className="input" placeholder="e.g. 500"></input>
                     </div>
                 </div>
 
@@ -330,4 +332,4 @@ function Form() {
     )
 }
 
-export default Form
+export default RecForm
