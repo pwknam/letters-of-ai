@@ -75,7 +75,7 @@ function RecForm() {
     useEffect(() => {
         console.log(url)
         axios
-            .post("https://lettersofai-server.onrender.com/scrape", { url })
+            .post("http://localhost:8080/scrape", { url })
             .then((res) => {
                 if(res.data){
                     setDescriptionPlaceholder(res.data[0])
@@ -94,7 +94,7 @@ function RecForm() {
     useEffect(() => {
         if (prompt !== "") {
             axios
-                .post("https://lettersofai-server.onrender.com/chat", { prompt })
+                .post("http://localhost:8080/chat", { prompt })
                 .then((res) => {
                     setHasCalledAPI(true)
                     setIsLoading(false)
