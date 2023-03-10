@@ -68,7 +68,7 @@ function CoverForm() {
     useEffect(() => {
         console.log(url)
         axios
-            .post("http://localhost:8080/scrape", { url })
+            .post("https://lettersofai-server.onrender.com/scrape", { url })
             .then((res) => {
                 if (res.data) {
                     setDescriptionPlaceholder(res.data[0])
@@ -87,7 +87,7 @@ function CoverForm() {
     useEffect(() => {
         if (prompt !== "") {
             axios
-                .post("http://localhost:8080/chat", { prompt })
+                .post("https://lettersofai-server.onrender.com/chat", { prompt })
                 .then((res) => {
                     setHasCalledAPI(true)
                     setIsLoading(false)
