@@ -10,7 +10,7 @@ function PastLetters() {
     const [coverLetters, setCoverLetters] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:3000/RecLetters")
+        fetch("https://jet-fluoridated-justice.glitch.me/RecLetters")
             .then((r) => r.json())
             .then((data) => setRecLetters(data))
     }, [])
@@ -20,7 +20,7 @@ function PastLetters() {
     })
 
     useEffect(() => {
-        fetch("http://localhost:3000/CoverLetters")
+        fetch("https://jet-fluoridated-justice.glitch.me/CoverLetters")
             .then((r) => r.json())
             .then((data) => setCoverLetters(data))
     }, [])

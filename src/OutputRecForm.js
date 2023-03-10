@@ -10,7 +10,7 @@ function OutputRecForm({ response, name }) {
         console.log({ response })
         console.log({ name })
 
-        fetch("http://localhost:3000/RecLetters", {
+        fetch("https://jet-fluoridated-justice.glitch.me/RecLetters", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

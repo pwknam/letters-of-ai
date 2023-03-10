@@ -55,14 +55,14 @@ function CoverForm() {
 
         // targetRef.current.scrollIntoView({ behavior: 'auto' })
 
-        setTimeout(()=> 
-        {window.scrollBy({
-            top: 800,
-            behavior: "smooth"
-        })
-    }, 
-    1500)
-}
+        setTimeout(() => {
+            window.scrollBy({
+                top: 800,
+                behavior: "smooth"
+            })
+        },
+            1500)
+    }
 
 
     useEffect(() => {
@@ -70,11 +70,11 @@ function CoverForm() {
         axios
             .post("http://localhost:8080/scrape", { url })
             .then((res) => {
-                if(res.data){
+                if (res.data) {
                     setDescriptionPlaceholder(res.data[0])
                     setDescription(res.data[0])
                 }
-                else if (url = "") {setDescriptionPlaceholder(null)}
+                else if (url = "") { setDescriptionPlaceholder(null) }
                 else setDescriptionPlaceholder("Sorry we can't parse this page! Try a different link or copy/paste the job description into this box.")
             })
             .catch((err) => {
@@ -94,7 +94,7 @@ function CoverForm() {
                     console.log(res)
                     setResponse(prevRes => {
                         let newRes = res.data;
-                        
+
                         return newRes;
                     });
                 })
@@ -140,13 +140,12 @@ function CoverForm() {
                         <label className="label">Feel free to paste the link to the job posting, or copy and paste the job description below!</label>
                         <div className="submitLink">
                             <input name="description" id="jobDescription" className="input" placeholder="e.g. www.linkedIn.com " ></input>
-                            <button onClick={(e)=> 
-                                {
-                                    e.preventDefault()
-                                    setURL(document.getElementById("jobDescription").value)
-                                    // console.log(document.getElementById("jobDescription").value)
-                                }
-                                } className="button-29">Parse</button>
+                            <button onClick={(e) => {
+                                e.preventDefault()
+                                setURL(document.getElementById("jobDescription").value)
+                                // console.log(document.getElementById("jobDescription").value)
+                            }
+                            } className="button-29">Parse</button>
                         </div>
 
                     </div>
@@ -229,7 +228,7 @@ function CoverForm() {
                             </label>
                         </div> */}
 
-                    
+
 
                         {/* <div className="styleContainer" onChange={(e) => setStyle(e.target.id)}>
                             <input type="radio" id="comparative" className="radioButton" name="writingStyle"></input>
@@ -273,7 +272,7 @@ function CoverForm() {
                     <img src={write} className="numberSize" />
                     <div className="questionBoxText">
                         <label className="label">Approximately how many words should the letter be?</label>
-                        <input onChange={e=> setWords(e.target.value)} type="text" className="input" placeholder="e.g. 500"></input>
+                        <input onChange={e => setWords(e.target.value)} type="text" className="input" placeholder="e.g. 500"></input>
                     </div>
                 </div>
 
@@ -294,7 +293,7 @@ function CoverForm() {
             <br />
 
             <div id="Loading">
-                {isLoading ? <Loading name={name}/> : null}
+                {isLoading ? <Loading name={name} /> : null}
             </div>
 
 

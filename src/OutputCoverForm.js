@@ -10,7 +10,7 @@ function OutputCoverForm({ response, name }) {
         console.log({ response })
         console.log({ name })
 
-        fetch("http://localhost:3000/CoverLetters", {
+        fetch("https://jet-fluoridated-justice.glitch.me/CoverLetters", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

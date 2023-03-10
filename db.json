@@ -33,19 +33,14 @@
   ],
   "CoverLetters": [
     {
-      "name": "Kyushik",
-      "content": "Give him the job please",
-      "id": 1
-    },
-    {
       "name": "Michelle Choi",
       "content": ", Computer Software, Internet\n\n\nDear Snap Inc,\n\nI am writing to apply for the position of Product Manager, Creative Tools with Snap Inc. As a passionate and experienced Product Manager, I am confident that I possess the necessary skills and experience to be an asset to your team.\n\nI bring to the table a wealth of knowledge and experience in product management, having successfully developed Google Maps from scratch. I have strong analytical skills and experience with AB testing, and I am skilled in the creation of delightful, polished, and performant products for customers in any market and on any device. Additionally, I am adept at collaborating and building trust with engineers, designers, data science, and other cross-functional teammates.\n\nI am also very familiar with the software development process, product design, and interaction design, and have experience shipping products at a consumer technology company. I have a direct experience working on creative tools with a specialization in AR tools or video editing tools for creators, as well as experience working on consumer social or visual communication/messaging products such as stories.\n\nI am eager to use my skills and experience in product management to help Snap Inc. succeed in its mission to empower people to express themselves, live in the moment, learn about the world, and have fun together. I believe that I can make a positive contribution to your team and help you achieve your goals.\n\nThank you for your consideration and I look forward to hearing from you.\n\nSincerely,\n\nMichelle Choi",
-      "id": 2
+      "id": 1
     },
     {
       "name": "Eliza",
       "content": "\n\nDear Hiring Manager,\n\nI am writing to apply for the position of Embedded Software Engineer with the System Firmware and Diagnostics team at Apple. I believe my qualifications and experience make me an ideal candidate for this role.\n\nI have a Bachelor of Science in Computer Engineering and five years of experience in a similar role. I have extensive experience developing software and drivers for common firmware interfaces, chipsets, and communications protocols. I am proficient in C/C++ and have a strong understanding of ARM platform and architecture/instruction set. I bring a strong understanding of debuggers such as gdb, lidb, etc., and I can comprehend hardware specs and schematics. I am also familiar with standard hardware protocols such as USB, UART, SPI, I2C, PCIe, MIPI, HDMI, and DDR. Furthermore, I have knowledge of real-time audio, including sample rates, buffering, I2S, PCM, and drivers. I am also adept at scripting with languages such as Lua and Python.\n\nWhat sets me apart from other applicants is my experience developing Instagram. I understand the complexities of creating and maintaining a user-friendly application. I have also been acknowledged for my excellent written and verbal communication skills and my ability to work collaboratively with a wide range of teams. I am highly motivated, and I have the ability to work in a fast-paced, dynamic environment.\n\nI am confident that my experience and qualifications make me an ideal fit for the Embedded Software Engineer role. I look forward to discussing my candidacy in more detail. Thank you for your time and consideration.\n\nSincerely,\n\nEliza",
-      "id": 3
+      "id": 2
     }
   ]
 }
