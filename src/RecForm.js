@@ -75,7 +75,7 @@ function RecForm() {
     useEffect(() => {
         console.log(url)
         axios
-            .post("chettgptserver-a6w8:10000/scrape", { url })
+            .post("https://lettersofai-server.onrender.com/scrape", { url })
             .then((res) => {
                 if(res.data){
                     setDescriptionPlaceholder(res.data[0])
