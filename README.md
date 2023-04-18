@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+# Letters of AI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+*TLDR: This tool allows you to input a linkedin job URL and a couple of traits about yourself or a candidate, and the tool will generate a cover letter or letter of rec for you that you can copy or save. Check out the live tool [here](https://lettersofai.onrender.com/)*
 
-## Available Scripts
+## Background and Motivation
+Countless users already use OpenAI's chat interface (ChatGPT( to handle all sorts of routine tasks: write emails, answer research questions, debug code, etc. While extremely powerful, the ChatBot still requires users to overcome to pain points:
 
-In the project directory, you can run:
+* Identify which problems ChatGPT would well: * AI has a unique advantage over humans in handling issues that require exposure to vast data sets (e.g. image labeling) or repetitive tasks prone to error. But would you trust it to write you a love letter? The optimal task division between humans and AI is still evolving, leaving it up to individuals to decide when to handle a task themselves as opposed to rely on a machine.
 
-### `npm start`
+* Formulate the prompt to ask ChatGPT: Even if a user knows that a certain task is better suited for AI than humans, s/he must then identify the best way to pose a query and present relevant data to the AI.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+With the release of ChatGPT's API, developers can leave the nitty-gritty details of model development to OpenAI and focus on building tools that optimize for user experience. We anticipate that these tools will focus on specific use cases and be discovered by users looking for a solution to a problem they didn't even know AI could solve. They will then simplify the process of data collection from users to ensure that the AI is fed the optimal parameters to produce quality results.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+As part of our efforts to predict the types of applications we expect to be built off of ChatGPT's API, we wanted to understand how difficult it was to build a ChatGPT integrated tool. So we built a little example ourselves!
 
-### `npm test`
+## Summary of Technical Features
+Here are the key features of our React App. Here's what we learned how to do:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* ChatGPT API Integration: Users can input a couple of fields about a job they are applying to or recommending a candidate for, which generates a prompt that ChatGPT can complete
+* Pupeteer/Chromium Integration: Users can put in a link to any LinkedIn Job Description, and the tool parses the page to extract the job description
+* Public Hosting: Using Render and Glitch, we were able to publicly host the server that returns the ChatGPT + Pupeteer responses, as well as our db.json. This allows our tool to be accessed by users without access to our localhost server.
