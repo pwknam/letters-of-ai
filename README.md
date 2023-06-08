@@ -17,6 +17,12 @@
 
 ## About The Project
 
+<br />
+
+<p align="center">
+  <img src="public/SCREENSHOT.png" width="75%" alt="space app recording"/>
+</p>
+
 ### Background and Motivation
 
 Countless users already use OpenAI's chat interface (ChatGPT( to handle all sorts of routine tasks: write emails, answer research questions, debug code, etc. While extremely powerful, the ChatBot still requires users to overcome to pain points:
