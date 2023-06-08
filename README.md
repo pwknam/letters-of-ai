@@ -17,8 +17,6 @@
 
 ## About The Project
 
-<br />
-
 ### Background and Motivation
 
 Countless users already use OpenAI's chat interface (ChatGPT( to handle all sorts of routine tasks: write emails, answer research questions, debug code, etc. While extremely powerful, the ChatBot still requires users to overcome to pain points:
