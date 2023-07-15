@@ -9,7 +9,7 @@
    TLDR: This tool allows you to input a linkedin job URL and a couple of traits about yourself or a candidate, and the tool will generate a cover letter or letter of rec for you that you can copy or save.
     <br />
     <br />
-    <a href="https://youtube.com"><strong>View Product Video Demo</strong></a>
+<!--     <a href="https://youtube.com"><strong>View Product Video Demo</strong></a> -->
     ·
     <a href="https://lettersofai.onrender.com/"><strong>Live Site</strong></a>
   </p>
